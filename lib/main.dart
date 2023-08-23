@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(App());
+  runApp(const App());
 }
 
 // Starting Point of Our App
 // 모든 화면과 버튼 등 모든 것들이 App에서 온다.
 // StatelessWidget은 아주 기초적인 Widget이다. 화면에 무언가를 띄워주는 것 말고는 하는 일이 없다. -> 반드시 build() 메소드를 구현해야 한다.
 class App extends StatelessWidget {
+  const App({super.key});
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -18,6 +20,7 @@ class App extends StatelessWidget {
         body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(
                   height: 100,
@@ -40,7 +43,52 @@ class App extends StatelessWidget {
                       ],
                     ),
                   ],
-                )
+                ),
+                const SizedBox(
+                  height: 120,
+                ),
+                Text(
+                  'Total Balance',
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.8),
+                    fontSize: 22,
+                  ),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                const Text(
+                  '\$5 194 582',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 42,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFF2B33A),
+                        borderRadius: BorderRadius.circular(45),
+                      ),
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 50,
+                          vertical: 20,
+                        ),
+                        child: Text(
+                          'Transfer',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ],
             )),
       ),
