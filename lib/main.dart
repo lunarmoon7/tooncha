@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 void main() {
   runApp(App());
 }
@@ -13,13 +14,35 @@ class App extends StatelessWidget {
     // Root Widget은 두 개의 옵션 중 하나를 return 해야 한다. 1. MaterialApp 2. CupertinoApp
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.lightBlueAccent,
-          title: const Text('Hello Flutter!'),
-        ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
+        backgroundColor: const Color(0xFF181818),
+        body: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 100,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        const Text('Hey, Selena',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                                fontWeight: FontWeight.w700)),
+                        Text('Welcome back',
+                            style: TextStyle(
+                              color: Colors.white.withOpacity(0.8),
+                            )),
+                      ],
+                    ),
+                  ],
+                )
+              ],
+            )),
       ),
     );
   }
